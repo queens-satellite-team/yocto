@@ -16,6 +16,8 @@ WORKDIR /home/qset
 
 
 COPY layers /home/qset/yocto/layers
+COPY build/conf /home/qset/yocto/build/conf
+
 WORKDIR /home/qset/yocto
 
-CMD ["/bin/bash", "-c", "source /home/qset/yocto/layers/poky/oe-init-build-env && exec /bin/bash"]
+CMD ["/bin/bash", "-c", ". /home/qset/yocto/layers/poky/oe-init-build-env && exec /bin/bash"]
